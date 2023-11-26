@@ -2,6 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+const Appheader=styled.header`
+display:flex;
+text-align:center;
+justify-content:center;
+`
+
 const CountdownContainer = styled.div`
   display: flex;
   border: 5px solid teal;
@@ -11,10 +17,11 @@ const CountdownContainer = styled.div`
   align-items: center;
   text-align: center;
   color: teal;
+  padding:5px 0 10px 0;
   font-size: 40px;
   font-weight: 900;
-  background: linear-gradient(23deg, #ff0000 10%, #ffffff 97%);
-  margin-top: 200px;
+  background: linear-gradient(14deg, #333 45%, #ffffff 70%);
+  margin-top: 150px;
   text-shadow: 0 0 10px rgba(0, 128, 128, 0.8);
 `
 ;
@@ -38,7 +45,6 @@ const Countdown = () => {
     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
 
     return {
-      now,
       total: timeRemaining,
       days,
       hours,
@@ -61,8 +67,10 @@ const Countdown = () => {
   }, [targetDate]);
 
   return (
+    
     <CountdownContainer>
-        <CountdownTitle>Next season Dates</CountdownTitle>
+        <Appheader >Formula 1 for Life!!</Appheader>
+        <CountdownTitle>Next season Countdown</CountdownTitle>
       {count.days}d {count.hours}h {count.minutes}m {count.seconds}s
     </CountdownContainer>
   );
